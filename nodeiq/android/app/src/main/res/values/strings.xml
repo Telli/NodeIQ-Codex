@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">NodeIQ</string>
+    <string name="peer_browser_title">Peers</string>
+    <string name="chat_title">Knowledge Exchange</string>
+    <string name="transport_mqtt">MQTT (TLS)</string>
+    <string name="transport_libp2p">libp2p (QUIC)</string>
+    <string name="provider_notification_title">NodeIQ Provider</string>
+    <string name="provider_notification_text">Advertising availability and handling queries.</string>
+    <string name="start_query">Send Query</string>
+    <string name="query_placeholder">Describe your issue…</string>
+</resources>
