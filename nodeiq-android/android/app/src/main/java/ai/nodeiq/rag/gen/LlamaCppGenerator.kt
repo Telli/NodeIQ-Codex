@@ -37,10 +37,14 @@ class LlamaCppGenerator(
         onEnd: (String) -> Unit
     ) {
         if (!isNativeLibraryLoaded) {
-            onToken("stub-response")
-            onEnd("SUCCESS")
+            provideStubResponse(onToken, onEnd)
             return
         }
+        // TODO: call native bridge when library is loaded
+        provideStubResponse(onToken, onEnd)
+    }
+
+    private fun provideStubResponse(onToken: (String) -> Unit, onEnd: (String) -> Unit) {
         onToken("stub-response")
         onEnd("SUCCESS")
     }
