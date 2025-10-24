@@ -1,0 +1,4 @@
+user nodeiq-*
+topic readwrite /registry/announce
+topic read /query/+
+topic write /response/+

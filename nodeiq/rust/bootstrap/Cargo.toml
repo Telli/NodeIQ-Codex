@@ -1,0 +1,14 @@
+[package]
+name = "nodeiq-bootstrap"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = { version = "4.4", features = ["derive"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["fmt", "env-filter"] }
+libp2p = { version = "0.53", features = ["quic", "noise", "identify", "relay", "rendezvous", "ping"] }
+tokio = { version = "1.35", features = ["rt-multi-thread", "macros"] }
+hyper = { version = "0.14", features = ["server", "http1", "tcp"] }
+anyhow = "1.0"
+futures = "0.3"

@@ -1,0 +1,27 @@
+syntax = "proto3";
+package kmarket;
+
+message Query {
+  string query_id = 1;
+  string from_peer = 2;
+  string to_peer = 3;
+  string agent_id = 4;
+  string query_text = 5;
+  uint32 ttl_ms = 6;
+}
+
+message StreamChunk {
+  string query_id = 1;
+  uint32 seq = 2;
+  oneof part {
+    string delta = 3;
+    string final_text = 4;
+    string error_text = 5;
+  }
+  string status = 6;
+}
+
+message Announce {
+  string agent_id = 1;
+  repeated string skills = 2;
+}
