@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package nodeiq.kmarket;
+
+message Pricing {
+  string peer_id = 1;
+  double price_per_1k_tokens = 2;
+  double min_query_price = 3;
+}

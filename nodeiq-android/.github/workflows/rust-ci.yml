@@ -1,0 +1,16 @@
+name: Rust CI
+
+on: [push, pull_request]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+      - name: Cargo check
+        working-directory: nodeiq-android/rust/core_p2p
+        run: cargo check
