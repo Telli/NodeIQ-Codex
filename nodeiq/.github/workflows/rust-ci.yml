@@ -1,0 +1,26 @@
+name: Rust CI
+
+on:
+  push:
+    paths:
+      - 'nodeiq/rust/**'
+  pull_request:
+    paths:
+      - 'nodeiq/rust/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+      - name: Build core
+        working-directory: nodeiq/rust/core_p2p
+        run: cargo build --release
+      - name: Build FFI
+        working-directory: nodeiq/rust/ffi
+        run: cargo build --release
+      - name: Build bootstrap
+        working-directory: nodeiq/rust/bootstrap
+        run: cargo build --release
