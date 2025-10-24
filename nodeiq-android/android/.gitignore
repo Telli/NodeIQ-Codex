@@ -1,0 +1,16 @@
+# Gradle
+.gradle/
+build/
+gradle-app.setting
+.gradletasknamecache
+
+# Android
+*.iml
+.idea/
+local.properties
+*.apk
+*.ap_
+*.dex
+captures/
+.externalNativeBuild
+.cxx

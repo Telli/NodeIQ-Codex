@@ -6,3 +6,4 @@ nodeiq/rust/**/target/
 nodeiq/.e2e-logs/
 nodeiq/broker/certs/*.csr
 nodeiq/broker/certs/*.srl
+_codeql_detected_source_root
