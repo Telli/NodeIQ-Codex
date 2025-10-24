@@ -1,0 +1,5 @@
+user ford_mech
+pattern write /response/%c
+pattern read /query/%c
+pattern read /registry/announce
+pattern write /registry/announce
