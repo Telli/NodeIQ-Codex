@@ -2,6 +2,9 @@
 nodeiq/android/.gradle/
 nodeiq/android/build/
 nodeiq/android/app/build/
+nodeiq-android/android/.gradle/
+nodeiq-android/android/build/
+nodeiq-android/android/app/build/
 nodeiq/rust/**/target/
 nodeiq/.e2e-logs/
 nodeiq/broker/certs/*.csr
