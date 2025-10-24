@@ -1,0 +1,18 @@
+[package]
+name = "nodeiq-core-p2p"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+libp2p = { version = "0.52", features = ["dns", "identify", "kad", "noise", "quic", "request-response", "tcp", "yamux", "websocket"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+tokio = { version = "1.37", features = ["macros", "rt-multi-thread", "sync"] }
+tracing = "0.1"
+prost = "0.12"
+prost-types = "0.12"
+anyhow = "1.0"
+
+[build-dependencies]
+prost-build = "0.12"
