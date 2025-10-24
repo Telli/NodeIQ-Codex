@@ -9,12 +9,23 @@ class LlamaCppGenerator(
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ILlmGenerator {
 
+    private val isNativeLibraryLoaded: Boolean
+
     init {
-        runCatching { System.loadLibrary("nodeiq_llama") }
-        nativeInit()
+        isNativeLibraryLoaded = runCatching { 
+            System.loadLibrary("nodeiq_llama")
+            true
+        }.getOrDefault(false)
+        
+        if (isNativeLibraryLoaded) {
+            nativeInit()
+        }
     }
 
     override fun load(modelPath: String, nCtx: Int): Boolean {
+        if (!isNativeLibraryLoaded) {
+            return false
+        }
         // TODO connect to native bridge
         return true
     }
@@ -25,6 +36,11 @@ class LlamaCppGenerator(
         onToken: (String) -> Unit,
         onEnd: (String) -> Unit
     ) {
+        if (!isNativeLibraryLoaded) {
+            onToken("stub-response")
+            onEnd("SUCCESS")
+            return
+        }
         onToken("stub-response")
         onEnd("SUCCESS")
     }
