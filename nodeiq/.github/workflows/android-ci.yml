@@ -1,0 +1,26 @@
+name: Android CI
+
+on:
+  push:
+    paths:
+      - 'nodeiq/android/**'
+  pull_request:
+    paths:
+      - 'nodeiq/android/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - name: Gradle Build
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 8.4
+          build-root-directory: nodeiq/android
+          arguments: assembleDebug

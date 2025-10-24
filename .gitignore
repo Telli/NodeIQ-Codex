@@ -1,0 +1,8 @@
+# Build artifacts
+nodeiq/android/.gradle/
+nodeiq/android/build/
+nodeiq/android/app/build/
+nodeiq/rust/**/target/
+nodeiq/.e2e-logs/
+nodeiq/broker/certs/*.csr
+nodeiq/broker/certs/*.srl
